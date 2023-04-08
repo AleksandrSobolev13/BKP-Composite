@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#  main.html
+<!doctype html>
+<style>
+form { margin: auto; width: 35%;}
+.result { margin: auto; width: 35%; border: 1px; solid #ccc}
+</style>
+<head> 
+	<title> Прогнозирование свойств: числа должны быть в диапазоне 0-1</title>
+</head>
+<form action = "{{url_for('main')}}" method = "POST">
+	<fieldset>
+		<legend> Введите Плотность, кг/м3 </legend>
+		<input name = "experience1" type = "float" required>
+        <legend> Введите модуль упругости, ГПа </legend>
+		<input name = "experience2" type = "float" required>
+        <legend> Введите % Отвердителя, % </legend>
+		<input name = "experience3" type = "float" required>
+        <legend> Введите Эпокс. группы, % </legend>
+		<input name = "experience4" type = "float" required>
+        <legend> Введите Температура вспышки, С_2 </legend>
+		<input name = "experience5" type = "float" required>
+        <legend> Введите Поверхностная плотность, г/м2 </legend>
+		<input name = "experience6" type = "float" required>
+        <legend> Введите Модуль упругости при растяжении, ГПа </legend>
+		<input name = "experience7" type = "floatr" required>
+        <legend> Введите Прочность при растяжении, МПа </legend>
+		<input name = "experience8" type = "float" required>
+        <legend> Введите Потребление смолы, г/м2 </legend>
+		<input name = "experience9" type = "float" required>
+        <legend> Введите Угол нашивки, град </legend>
+		<input name = "experience10" type = "number" required>
+        <legend> Введите Шаг нашивки </legend>
+		<input name = "experience11" type = "float" required>
+        <legend> Введите Плотность нашивки </legend>
+        <input name = "experience12" type = "float" required>
+       	<br>
+<br>
+<input type="submit">
+</fieldset>
+</form>
+
+
+<div class = "result" align = "center"></div>
+	{% if result %}
+	<br>
+	<p style="font-size:30px">
+	Ваша прогнозная зарплата
+	</p>
+	<p style="font-size:30px"> {{result}}
+</p>
+{% endif %}
+</div>
+
