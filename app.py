@@ -1,7 +1,4 @@
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
-# Импортируем необходимые библиотеки для нашего приложения
-#import numpy as np
-#import tensorflow as tf
 import pandas as pd
 from tensorflow import keras
 from flask import Flask, request, render_template
@@ -21,11 +18,9 @@ app = flask.Flask(__name__, template_folder = 'templates')
 def main():
     if flask.request.method == 'GET':
         return render_template('main.html') 
-        # Сразу создать в папке templates in VSCode файлик main.html
+       
     if flask.request.method == 'POST':
-        #with open('/home/alexander/Документы/BKP_A_Sobolev/model.pkl', 'rb') as f:
-            #loaded_model = pickle.load(f)
-        X_test_load = pd.read_excel(r"/home/alexander/Документы/BKP_A_Sobolev/X_test2-0rows.xlsx")
+        X_test_load = pd.read_excel(r"https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/X_test2-0rows.xlsx")
         X_test_ready = pd.DataFrame(X_test_load)
         params = []
         exp1 = float(flask.request.form['experience1'])
