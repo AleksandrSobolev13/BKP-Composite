@@ -13,6 +13,11 @@ from  sklearn.linear_model import LinearRegression
 app = flask.Flask(__name__, template_folder = 'templates')  
 # И создаём папку templates in VSCode
 # Создаём декораторы для работы с HTML страницами и методы POST GET
+# https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/templates/main.html
+
+loaded_scaler_x = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_scaler_x.pkl', 'rb'))
+loaded_scaler_y = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_scaler_y.pkl', 'rb'))
+loaded_model = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_predict2.pkl', 'rb'))
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
