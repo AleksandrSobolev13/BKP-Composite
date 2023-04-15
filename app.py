@@ -13,16 +13,19 @@ from  sklearn.linear_model import LinearRegression
 app = flask.Flask(__name__, template_folder = 'templates')  
 # И создаём папку templates in VSCode
 # Создаём декораторы для работы с HTML страницами и методы POST GET
+
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
+
 def main():
     if flask.request.method == 'GET':
         return render_template('main.html') 
-       
     if flask.request.method == 'POST':
-        X_test_load = pd.read_excel(r"https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/X_test2-0rows.xlsx")
+	params = []
+        alarm_form = []
+        X_test_load = pd.read_excel(r"https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/X_test2-3rows.xlsx")
         X_test_ready = pd.DataFrame(X_test_load)
-        params = []
+
         exp1 = float(flask.request.form['experience1'])
         params.append(exp1)
         exp2 = float(flask.request.form['experience2'])
@@ -49,19 +52,9 @@ def main():
         params.append(exp12)
         data_from = {'Плотность, кг/м3' : [exp1], 'модуль упругости, ГПа' : [exp2], 'Отвердитель, %' : [exp3],'Эпокс. группы, %' : [exp4], 'Температура вспышки, С_2' : [exp5],'Поверхностная плотность, г/м2' : [exp6], 'Модуль упругости при растяжении, ГПа' : [exp7], 'Прочность при растяжении, МПа' : [exp8], 'Потребление смолы, г/м2' : [exp9], 'Угол нашивки, град' : [exp10], 'Шаг нашивки' : [exp11], 'Плотность нашивки' : [exp12]}
         experie = pd.DataFrame.from_dict(data_from)
-        print('\n')
-        print(data_from)
-        print('\n')
-        print(experie)
-        print('\n')
-        print(params)
-
-        #prediction = loaded_model.predict([exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8, exp9, exp10, exp11, exp12])
-        #data_from = {'Плотность, кг/м3' : exp1, 'модуль упругости, ГПа' : exp2, 'Отвердитель, %' : exp3,'Эпокс. группы, %' : exp4, 'Температура вспышки, С_2' : exp5,'Поверхностная плотность, г/м2' : exp6, 'Модуль упругости при растяжении, ГПа' : exp7, 'Прочность при растяжении, МПа' : exp8, 'Потребление смолы, г/м2' : exp9, 'Угол нашивки, град' : exp10, 'Шаг нашивки' : exp11, 'Плотность нашивки' : exp12}
-        #exp = pd.DataFrame.from_dict(data_from)
-        #y_pred = loaded_model.predict([[params]])
+        
         return  render_template('main.html', result = exp1+exp2+exp3)
-#for 2D array  y_pred :[ [  ] ]
+	#for 2D array  y_pred :[ [  ] ]
     
 if __name__ == '__main__':
 	app.run()
