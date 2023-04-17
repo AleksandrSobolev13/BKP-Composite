@@ -8,13 +8,10 @@ import pickle
 import sklearn
 
 app = flask.Flask(__name__, template_folder = 'templates')  
-# И создаём папку templates in VSCode
-# Создаём декораторы для работы с HTML страницами и методы POST GET
-# https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/templates/main.html
 
-loaded_scaler_x = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_scaler_x.pkl', 'rb'))
-loaded_scaler_y = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_scaler_y.pkl', 'rb'))
-loaded_model = pickle.load(open('/home/alexander/Документы/App_A_Sobolev/model_predict2.pkl', 'rb'))
+loaded_scaler_x = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb'))
+loaded_scaler_y = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_y.pkl', 'rb'))
+loaded_model = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.pkl', 'rb'))
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
@@ -25,14 +22,14 @@ def main():
     if flask.request.method == 'POST':
 	params = []
         alarm_form = []
-        X_test_load = pd.read_excel(r"https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/X_test2-3rows.xlsx")
-        X_test_ready = pd.DataFrame(X_test_load)
-
-        exp1 = float(flask.request.form['experience1'])
+	exp1=1
+	exp2=2
+	exp3=3       
+        #exp1 = float(flask.request.form['experience1'])
         params.append(exp1)
-        exp2 = float(flask.request.form['experience2'])
+        #exp2 = float(flask.request.form['experience2'])
         params.append(exp2)
-        exp3 = float(flask.request.form['experience3'])
+        #exp3 = float(flask.request.form['experience3'])
         params.append(exp3)
         exp4 = float(flask.request.form['experience4'])
         params.append(exp4)
@@ -54,8 +51,9 @@ def main():
         params.append(exp12)
         data_from = {'Плотность, кг/м3' : [exp1], 'модуль упругости, ГПа' : [exp2], 'Отвердитель, %' : [exp3],'Эпокс. группы, %' : [exp4], 'Температура вспышки, С_2' : [exp5],'Поверхностная плотность, г/м2' : [exp6], 'Модуль упругости при растяжении, ГПа' : [exp7], 'Прочность при растяжении, МПа' : [exp8], 'Потребление смолы, г/м2' : [exp9], 'Угол нашивки, град' : [exp10], 'Шаг нашивки' : [exp11], 'Плотность нашивки' : [exp12]}
         experie = pd.DataFrame.from_dict(data_from)
-        
-        return  render_template('main.html', result = exp1+exp2+exp3)
+        print('experie = ', experie)
+	print('params = ', params)
+        #return  render_template('main.html', result = exp1+exp2+exp3)
 	#for 2D array  y_pred :[ [  ] ]
     
 if __name__ == '__main__':
