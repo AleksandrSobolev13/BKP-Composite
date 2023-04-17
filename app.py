@@ -1,14 +1,11 @@
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
 import pandas as pd
-from tensorflow import keras
-from flask import Flask, request, render_template
+import keras
 import flask
 from flask import render_template
 from flask import request
 import pickle
 import sklearn
-from  sklearn.linear_model import LinearRegression
-
 
 app = flask.Flask(__name__, template_folder = 'templates')  
 # И создаём папку templates in VSCode
