@@ -4,79 +4,76 @@ form { margin: auto; width: 35%;}
 .result { margin: auto; width: 35%; border: 1px; solid #ccc}
 </style>
 <head> 
-	<title> Прогнозирование зарплаты</title>
-    <p> Конструктор сайтов <font size="6" color="#fa8e47" face="serif">"Нубекс"</font></p>
+	<title> Прогнозирование свойств </title>
 </head>
 <form action = "{{url_for('main')}}" method = "POST">
 	<fieldset>
-		<legend> Введите значение1 </legend>
-		Ваш опыт 
+		<legend> Введите значение Плотность, кг/м3 </legend>
+		Например, 1974 
 		<input name = "experience1" type = "number" required>
 
-		<legend> Введите значение2 </legend>
-		Ваш опыт 
+		<legend> Введите значение Модуля упругости, ГПа </legend>
+		Например,  738 
 		<input name = "experience2" type = "number" required>
 
-		<legend> Введите значение3 </legend>
-		Ваш опыт 
+		<legend> Введите значение % Отвердителя </legend>
+		Например  110
 		<input name = "experience3" type = "number" required>
 
-		<legend> Введите значение4 </legend>
-		Ваш опыт 
+		<legend> Введите значение % Эпокс. группы </legend>
+		Например  22
 		<input name = "experience4" type = "number" required>
 
-		<legend> Введите значение5 </legend>
-		Ваш опыт 
+		<legend> Введите значение Температура вспышки </legend>
+		Например 286
 		<input name = "experience5" type = "number" required>
 
-		<legend> Введите значение6 </legend>
-		Ваш опыт 
+		<legend> Введите значение Поверхностная плотность, г/м2 </legend>
+		Например 482
 		<input name = "experience6" type = "number" required>
 
-		<legend> Введите значение7 </legend>
-		Ваш опыт 
+		<legend> Введите значение Модуль упругости при растяжении </legend>
+		Например 73
 		<input name = "experience7" type = "number" required>
 
-		<legend> Введите значение8 </legend>
-		Ваш опыт 
+		<legend> Введите значение Прочность при растяжении, МПа </legend>
+		Например 2467
 		<input name = "experience8" type = "number" required>
 
-		<legend> Введите значение9 </legend>
-		Ваш опыт 
+		<legend> Введите значение Потребление смолы, г/м2 </legend>
+		Например 217
 		<input name = "experience9" type = "number" required>
 
-		<legend> Введите значение10 </legend>
-		Ваш опыт 
+		<legend> Введите значение Угол нашивки, град </legend>
+		Например 1
 		<input name = "experience10" type = "number" required>
 
-		<legend> Введите значение11 </legend>
-		Ваш опыт 
+		<legend> Введите значение Шаг нашивки </legend>
+		Например 7
 		<input name = "experience11" type = "number" required>
 
-		<legend> Введите значение12 </legend>
-		Ваш опыт 
+		<legend> Введите значение Плотность нашивки </legend>
+		Например 57
 		<input name = "experience12" type = "number" required>
 
 		<br>
 <br>
 <br>
-<input type="submit">
+<input type="submit" value="Отправить на расчёт соотношения матрица\наполнитель">
 </fieldset>
 </form>
-
-
-
 
 <div class = "result" align = "center"></div>
 	{% if result %}
 	<br>
-	<p style="font-size:50px" >
-	Ваша прогнозная зарплата
+	<p style="font-size:30px">
+	Прогнозное значение матрица\наполнитель
 	</p>
 	<p style="font-size:50px"> {{result}}
 </p>
 {% endif %}
 </div>
+
 
 
 
