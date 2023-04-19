@@ -54,8 +54,7 @@ def main():
         print('experie = ', experie)
 	print('params = ', params)
         #return  render_template('main.html', result = exp1+exp2+exp3)
-	#for 2D array  y_pred :[ [  ] ]
-    
+	    
 if __name__ == '__main__':
 	app.run()
 
