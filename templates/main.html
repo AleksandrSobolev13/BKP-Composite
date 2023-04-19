@@ -3,6 +3,7 @@
 form { margin: auto; width: 35%;}
 .result { margin: auto; width: 35%; border: 1px; solid #ccc}
 </style>
+	<article> Контент - основное содержимое страницы.</article>
 <head> 
 	<title> Прогнозирование свойств </title>
 </head>
@@ -61,19 +62,35 @@ form { margin: auto; width: 35%;}
 <br>
 <input type="submit" value="Отправить на расчёт соотношения матрица\наполнитель">
 </fieldset>
-</form>
 
 <div class = "result" align = "center"></div>
-	{% if result %}
-	<br>
-	<p style="font-size:30px">
-	Прогнозное значение матрица\наполнитель
-	</p>
-	<p style="font-size:50px"> {{result}}
-</p>
-{% endif %}
-</div>
+   	{% if result %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+	<p style="font-size:24px">	Прогнозное значение матрица\наполнитель	</p>
+	<p style="font-size:50px"> {{result}}</p>
+    {% endif %}
 
+  
+    {% if alarm_to %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+    <p><span style="color: red; font-size: 24px">Введены превышающие значения:</span></p>
+	<p><span style="color: red; font-size: 14px"> {{alarm_to}} </span></p>
+    {% endif %}
+
+ 
+    {% if data %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+	<p style="font-size:24px">	Рассчитано на основе введённых данных:	</p>
+	<p style="font-size:14px"> {{data}}</p>
+    {% endif %}
+    
+
+
+</td></tr> <!--ряд с ячейками тела таблицы-->
+</table>
+
+</body>
+</html>
 
 
 
