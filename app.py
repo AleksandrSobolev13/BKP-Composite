@@ -6,13 +6,14 @@ import pandas as pd
 from tensorflow import keras
 import pickle
 
-#app = Flask(__name__)
-#@app.route('/')
-#def hello_world():
-#return 'Hello, BKR-KOMPOSITE!'
+# app = Flask(__name__)
+# @app.route('/')
+# def hello_world():
+# return 'Hello, BKR-KOMPOSITE!'
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
+# app = flask.Flask(__name__, template_folder = 'templates') 
 
-app = flask.Flask(__name__, template_folder = 'templates')  
+app = Flask(__name__, template_folder = 'templates')
 
 loaded_scaler_x = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb'))
 loaded_scaler_y = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_y.pkl', 'rb'))
