@@ -15,9 +15,9 @@ import pickle
 
 app = Flask(__name__, template_folder = 'templates')
 
-loaded_scaler_x = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb'))
-loaded_scaler_y = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_y.pkl', 'rb'))
-loaded_model = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.pkl', 'rb'))
+loaded_scaler_x = pickle.load(open('model_scaler_x.pkl', 'rb'))
+loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
+loaded_model = pickle.load(open('model_predict2.pkl', 'rb'))
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
