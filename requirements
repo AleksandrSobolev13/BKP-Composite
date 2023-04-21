@@ -1,7 +1,9 @@
-numpy==1.23.5
-pandas==1.5.2
-keras==2.10.0
-pickle==0.0.11
-flask==2.2.2
-sklearn==0.0.post1
+Flask
+Gunicorn
+# numpy==1.23.5
+# pandas==1.5.2
+# keras==2.10.0
+# pickle==0.0.11
+# flask==2.2.2
+## sklearn==0.0.post1
 Python==3.7.10
