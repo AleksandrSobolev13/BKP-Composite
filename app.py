@@ -36,8 +36,7 @@ def main():
 	
 	#params = []
         #alarm_form = []
-
-        exp1 = request.form['experience1']
+	exp1 = request.form['experience1']
         #params.append(exp1)
        	
 	return  render_template('index1.html', result = exp1)
