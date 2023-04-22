@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+
+<style>
+    form { margin: 10; width: 100%; border: 8px; font-size:24px">}
+    .result { margin: 10; width: 100%; border: 8px; solid #ccc}
+</style>
+
+<head> 
+    <meta charset="utf-8" />
+	<title> Прогнозирование свойств композитов </title>
+</head>
+<body>
+
+<h1 align = "center">  Прогноз соотношения матрица/наполнитель: </h1>
+
+
+
+<table align="center" bgcolor="#FFFFFF" border="6" cellpadding="5" cellspacing="5" width = "900px">
+<tr><th> Ввод данных </th><th>Результат расчёта</th></tr> <!--ряд с ячейками заголовков-->
+
+<tr><td>
+<form action = "{{url_for('main')}}" method = "POST">
+
+	<fieldset>
+		<legend> Введите значение Плотность, кг/м3  </legend>
+		В диапазоне от 1790 до 2160  
+    	<input name = "experience1" placeholder="Например, 1974" type = "number" required>  
+
+		
+		<br>
+        <br>
+        <input type="submit" style="font-size:20px" value="Отправить на расчёт соотношения матрица\наполнитель">
+    </fieldset>
+</form>
+</td><td>
+
+<div class = "result" align = "center"></div>
+
+   	{% if result %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+	<p style="font-size:24px">	Прогнозное значение матрица\наполнитель	</p>
+	<p style="font-size:50px"> {{result}}</p>
+    {% endif %}
+
+
+   
+    {% if alarm_to %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+    <p><span style="color: red; font-size: 24px">Введены превышающие значения:</span></p>
+	<p><span style="color: red; font-size: 14px"> {{alarm_to}} </span></p>
+    {% endif %}
+
+ 
+    {% if data %}
+    <p style="font-family: Times New Roman,Times,serif;"</p>
+	<p style="font-size:24px">	Рассчитано на основе введённых данных:	</p>
+	<p style="font-size:14px"> {{data}}</p>
+    {% endif %}
+    
+</td></tr> <!--ряд с ячейками тела таблицы-->
+</table>
+
+</tbody>
+</html>
+
+
+
+
+
+
