@@ -30,9 +30,9 @@ app = Flask(__name__)
 
 def main1():
 	#if flask.request.method == 'GET':
-	return render_template('index.html') 
+		#return render_template('index.html') 
 	#if flask.request.method == 'POST':
-		#return  render_template('index.html', result = 2)
+	return  render_template('index.html', result = 2)
 
 if __name__ == '__main1__':
 	app.run()
