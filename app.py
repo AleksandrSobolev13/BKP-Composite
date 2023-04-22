@@ -30,14 +30,14 @@ app = Flask(__name__)
 # @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-	if flask.request.method == 'GET':
+	if request.method == 'GET':
 		return render_template('index1.html') 
-	if flask.request.method == 'POST':
+	if request.method == 'POST':
 	
 	params = []
         alarm_form = []
 
-        exp1 = float(flask.request.form['experience1'])
+        exp1 = request.form['experience1']
         params.append(exp1)
        	
 	return  render_template('index1.html', result = exp1)
