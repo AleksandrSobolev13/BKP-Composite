@@ -9,7 +9,7 @@ from flask import render_template
 
 # from tensorflow import keras
 # import pickle
-@app.route('/', methods = ['POST', 'GET'])
+
 app = Flask(__name__)
 @app.route('/', methods = ['POST', 'GET'])
 
