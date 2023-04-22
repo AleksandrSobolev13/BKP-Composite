@@ -22,7 +22,7 @@ app = Flask(__name__)
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
 # app = flask.Flask(__name__, template_folder = 'templates') 
 # app = Flask(__name__, template_folder = 'templates')
-# loaded_scaler_x = pickle.load(open('model_scaler_x.pkl', 'rb'))
+loaded_scaler_x = pickle.load(open('model_scaler_x.pkl', 'rb'))
 # loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
 # loaded_model = pickle.load(open('model_predict2.pkl', 'rb'))
 
@@ -33,12 +33,14 @@ def main():
 	if request.method == 'GET':
 		return render_template('index1.html') 
 	if request.method == 'POST':
-	
+		exp1 = request.form.get('experience1')
+		#params.append(exp1)
+		
+	# request.form.get('username'), request.form.get('password')):
+	# request.form['username'])
 	#params = []
         #alarm_form = []
-	exp1 = request.form['experience1']
-        #params.append(exp1)
-       	
+	      	
 	return  render_template('index1.html', result = exp1)
 
 if __name__ == '__main__':
