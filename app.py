@@ -1,8 +1,12 @@
+# 
+import numpy as np
+import pandas as pd
+import flask
 from flask import Flask
 from flask import request
 from flask import render_template
-import numpy as np
-import pandas as pd
+
+
 # from tensorflow import keras
 # import pickle
 @app.route('/', methods = ['POST', 'GET'])
