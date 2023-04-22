@@ -34,11 +34,11 @@ def main():
 		return render_template('index1.html') 
 	if request.method == 'POST':
 	
-	params = []
-        alarm_form = []
+	#params = []
+        #alarm_form = []
 
         exp1 = request.form['experience1']
-        params.append(exp1)
+        #params.append(exp1)
        	
 	return  render_template('index1.html', result = exp1)
 
