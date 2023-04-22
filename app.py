@@ -7,11 +7,12 @@ import pandas as pd
 # import pickle
 @app.route('/', methods = ['POST', 'GET'])
 app = Flask(__name__)
+@app.route('/', methods = ['POST', 'GET'])
+
 
 # @app.route('/')
 # def hello_world():
 	# return 'Hello, BKR-KOMPOSITE!'
-
 
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
 # app = flask.Flask(__name__, template_folder = 'templates') 
