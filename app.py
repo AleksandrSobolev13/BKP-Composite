@@ -28,13 +28,13 @@ app = Flask(__name__)
 # @app.route('/', methods = ['POST', 'GET'])
 # @app.route('/index', methods = ['POST', 'GET'])
 
-def main1():
+def main():
 	#if flask.request.method == 'GET':
 		#return render_template('index.html') 
 	#if flask.request.method == 'POST':
 	return  render_template('index.html', result = 2)
 
-if __name__ == '__main1__':
+if __name__ == '__main__':
 	app.run()
 
 
