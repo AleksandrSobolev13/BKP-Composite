@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 # from tensorflow import keras
 # import pickle
-
+@app.route('/', methods = ['POST', 'GET'])
 app = Flask(__name__)
 
 # @app.route('/')
@@ -20,7 +20,7 @@ app = Flask(__name__)
 # loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
 # loaded_model = pickle.load(open('model_predict2.pkl', 'rb'))
 
-@app.route('/', methods = ['POST', 'GET'])
+# @app.route('/', methods = ['POST', 'GET'])
 # @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
