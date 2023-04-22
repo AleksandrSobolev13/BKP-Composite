@@ -10,5 +10,11 @@
 	<h1 align = "center">  Прогноз соотношения матрица/наполнитель: </h1>
 	</form>
 	</td><td>
+	
+	{% if result %}
+		<p style="font-family: Times New Roman,Times,serif;"</p>
+		<p style="font-size:24px"> Прогнозное значение матрица\наполнител </p>
+		<p style="font-size:50px"> {{result}}</p>
+    	{% endif %}
 </tbody>
 </html>
