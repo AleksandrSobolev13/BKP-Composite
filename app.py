@@ -3,8 +3,8 @@ from flask import request
 from flask import render_template
 import numpy as np
 import pandas as pd
-from tensorflow import keras
-import pickle
+# from tensorflow import keras
+# import pickle
 
 # app = Flask(__name__)
 # @app.route('/')
@@ -23,13 +23,10 @@ app = Flask(__name__, template_folder = 'templates')
 @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-    if flask.request.method == 'GET':
-        return render_template('main.html') 
-    if flask.request.method == 'POST':
-        params = []
-        alarm_form = []
-	return  render_template('main.html', result = 2)
-  
+	if flask.request.method == 'GET':
+        	return render_template('main.html') 
+	if flask.request.method == 'POST':
+		return  render_template('main.html', result = 2)
 
 if __name__ == '__main__':
 	app.run()
