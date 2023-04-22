@@ -12,6 +12,7 @@ from flask import render_template
 
 app = Flask(__name__)
 @app.route('/', methods = ['POST', 'GET'])
+@app.route('/index', methods = ['POST', 'GET'])
 
 
 # @app.route('/')
@@ -29,10 +30,17 @@ app = Flask(__name__)
 # @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-	#if flask.request.method == 'GET':
-		#return render_template('index.html') 
-	#if flask.request.method == 'POST':
-	return  render_template('index.html', result = 2)
+	if flask.request.method == 'GET':
+		return render_template('index1.html') 
+	if flask.request.method == 'POST':
+	
+	params = []
+        alarm_form = []
+
+        exp1 = float(flask.request.form['experience1'])
+        params.append(exp1)
+       	
+	return  render_template('index1.html', result = exp1)
 
 if __name__ == '__main__':
 	app.run()
