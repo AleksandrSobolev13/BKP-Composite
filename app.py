@@ -30,16 +30,16 @@ loaded_scaler_x = pickle.load(open('model_scaler_x.pkl', 'rb'))
 # @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-	if request.method == 'GET':
-		return render_template('index1.html') 
-	if request.method == 'POST':
-		exp1 = request.form.get('experience1')
-		#params.append(exp1)
+	# if request.method == 'GET':
+		# return render_template('index1.html') 
+	# if request.method == 'POST':
+		# exp1 = request.form.get('experience1')
+		# params.append(exp1)
 		
 	# request.form.get('username'), request.form.get('password')):
 	# request.form['username'])
-	#params = []
-        #alarm_form = []
+	# params = []
+        # alarm_form = []
 	      	
 	return  render_template('index1.html', result = exp1)
 
