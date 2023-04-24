@@ -3,5 +3,5 @@ Gunicorn
 numpy
 pandas
 tensorflow
-
+joblib
 
