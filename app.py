@@ -21,7 +21,7 @@ app = Flask(__name__)
 # app = Flask(__name__, template_folder = 'templates')
 
 
-x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
+# x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
 # scx = pickle(x-file)
 scx = pickle.load(x-file)
 
