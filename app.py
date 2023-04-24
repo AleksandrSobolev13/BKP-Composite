@@ -38,7 +38,7 @@ def main():
 	# params = []
         # alarm_form = []
 	      	
-	return  render_template('index1.html', result = exp1)
+	return  render_template('index.html', result = exp1)
 
 if __name__ == '__main__':
 	app.run()
