@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import flask
+import pickle
 from flask import Flask
 from flask import request
 from flask import render_template
