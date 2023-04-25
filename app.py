@@ -23,10 +23,8 @@ loaded_scaler_y = load('model_scaler_y.joblib')
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
 
-return render_template('index.html', result = 5)
-
-
-#def main():
+def main():
+	return render_template('index.html', result = 5)
 	#if request.method == 'GET':
 		#return render_template('index.html') 
 	#if request.method == 'POST':
