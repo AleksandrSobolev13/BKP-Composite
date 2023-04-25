@@ -23,21 +23,22 @@ loaded_scaler_y = load('model_scaler_y.joblib')
 @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-	#return render_template('index.html', result = 5)
+	
 	if request.method == 'GET':
-		return render_template('index.html') 
+		return render_template('main.html') 
 	if request.method == 'POST':
-		# exp1 = request.form.get('experience1')
-		# params.append(exp1)
+		params = []
+		alarm_form = []
+		exp1 = float(flask.request.form['experience1'])
+		params.append(exp1)
+		if (exp1 < 1790 or exp1 > 2160):
+			alarm_form.append('Плотностb, кг/м3')
+			
+		data_from = {'Плотность, кг/м3' : [exp1],}
+		experie = pd.DataFrame.from_dict(data_from)
+				
 		return  render_template('index.html', result = 7)
-		
-	# request.form.get('username'), request.form.get('password')):
-	# request.form['username'])
-	# params = []
-        # alarm_form = []
-	      	
-	# return  render_template('index.html', result = exp1)
-
+	
 if __name__ == '__main__':
 	app.run()
 
