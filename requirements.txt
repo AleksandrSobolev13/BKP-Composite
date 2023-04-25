@@ -5,5 +5,5 @@ numpy
 pandas
 tensorflow
 joblib
-pickle==2.2.3
+pickle4
 
