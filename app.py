@@ -2,14 +2,12 @@
 import numpy as np
 import pandas as pd
 import flask
-import pickle
+import pickle4 as pickle
 from flask import Flask
 from flask import request
 from flask import render_template
-
-
 # from tensorflow import keras
-# import pickle
+
 
 app = Flask(__name__)
 @app.route('/', methods = ['POST', 'GET'])
@@ -21,9 +19,8 @@ app = Flask(__name__)
 # app = Flask(__name__, template_folder = 'templates')
 
 
-# x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
-# scx = pickle(x-file)
-scx = pickle.load(x-file)
+x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
+loaded_scaler = pickle(x-file)
 
 # loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
 # loaded_model = pickle.load(open('model_predict2.pkl', 'rb'))
@@ -34,9 +31,10 @@ scx = pickle.load(x-file)
 def main():
 	if request.method == 'GET':
 		return render_template('index.html') 
-	# if request.method == 'POST':
+	if request.method == 'POST':
 		# exp1 = request.form.get('experience1')
 		# params.append(exp1)
+		return  render_template('index.html', result = 5)
 		
 	# request.form.get('username'), request.form.get('password')):
 	# request.form['username'])
