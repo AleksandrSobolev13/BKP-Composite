@@ -23,13 +23,13 @@ loaded_scaler_y = load('model_scaler_y.joblib')
 @app.route('/index', methods = ['POST', 'GET'])
 
 def main():
-	return render_template('index.html', result = 5)
-	#if request.method == 'GET':
-		#return render_template('index.html') 
-	#if request.method == 'POST':
+	#return render_template('index.html', result = 5)
+	if request.method == 'GET':
+		return render_template('index.html') 
+	if request.method == 'POST':
 		# exp1 = request.form.get('experience1')
 		# params.append(exp1)
-		#return  render_template('index.html', result = 5)
+		return  render_template('index.html', result = 7)
 		
 	# request.form.get('username'), request.form.get('password')):
 	# request.form['username'])
