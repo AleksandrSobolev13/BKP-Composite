@@ -1,29 +1,28 @@
 # 
-#!/usr/bin/env python3
+## #!/usr/bin/env python3
 import numpy as np
 import pandas as pd
 import flask
-import pickle4 as pickle
+# import pickle4 as pickle
 from flask import Flask
 from flask import request
 from flask import render_template
 # from tensorflow import keras
 from joblib import Memory
+from joblib import dump, load
 
 # app = flask.Flask(__name__, template_folder = 'templates') 
 app = Flask(__name__, template_folder = 'templates')
 
-loaded_model = pickle.load(open('model_predict2.pkl', 'rb', protocol=5))
+# loaded_model = pickle.load(open('model_predict2.pkl', 'rb', protocol=5))
+loaded_model = load('model_predict2.joblib')
+loaded_scaler_x = load('model_scaler_x.joblib')
+loaded_scaler_y = load('model_scaler_y.joblib')
+
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
 
-
-# loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
-
-
-# @app.route('/', methods = ['POST', 'GET'])
-# @app.route('/index', methods = ['POST', 'GET'])
 return render_template('index.html', result = 5)
 
 
