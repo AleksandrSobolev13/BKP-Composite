@@ -9,7 +9,7 @@ from flask import request
 from flask import render_template
 # from tensorflow import keras
 from joblib import Memory
-from joblib import dump, load
+from joblib import load
 
 # app = flask.Flask(__name__, template_folder = 'templates') 
 app = Flask(__name__, template_folder = 'templates')
