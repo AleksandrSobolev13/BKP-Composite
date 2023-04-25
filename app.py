@@ -8,34 +8,32 @@ from flask import Flask
 from flask import request
 from flask import render_template
 # from tensorflow import keras
+from joblib import Memory
 
 # app = flask.Flask(__name__, template_folder = 'templates') 
 app = Flask(__name__, template_folder = 'templates')
-# app = Flask(__name__)
+
+loaded_model = pickle.load(open('model_predict2.pkl', 'rb', protocol=5))
+
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
 
 
-# Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
-
-
-
-x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
-loaded_scaler = pickle(x-file)
-
 # loaded_scaler_y = pickle.load(open('model_scaler_y.pkl', 'rb'))
-# loaded_model = pickle.load(open('model_predict2.pkl', 'rb'))
+
 
 # @app.route('/', methods = ['POST', 'GET'])
 # @app.route('/index', methods = ['POST', 'GET'])
+return render_template('index.html', result = 5)
 
-def main():
-	if request.method == 'GET':
-		return render_template('index.html') 
-	if request.method == 'POST':
+
+#def main():
+	#if request.method == 'GET':
+		#return render_template('index.html') 
+	#if request.method == 'POST':
 		# exp1 = request.form.get('experience1')
 		# params.append(exp1)
-		return  render_template('index.html', result = 5)
+		#return  render_template('index.html', result = 5)
 		
 	# request.form.get('username'), request.form.get('password')):
 	# request.form['username'])
