@@ -1,4 +1,5 @@
 # 
+#!/usr/bin/env python3
 import numpy as np
 import pandas as pd
 import flask
@@ -8,15 +9,15 @@ from flask import request
 from flask import render_template
 # from tensorflow import keras
 
-
-app = Flask(__name__)
+# app = flask.Flask(__name__, template_folder = 'templates') 
+app = Flask(__name__, template_folder = 'templates')
+# app = Flask(__name__)
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
 
 
 # Создаем пользовательское приложение для прогнозирования "соотношения матрица-наполнитель"
-# app = flask.Flask(__name__, template_folder = 'templates') 
-# app = Flask(__name__, template_folder = 'templates')
+
 
 
 x-file = open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.pkl', 'rb')
