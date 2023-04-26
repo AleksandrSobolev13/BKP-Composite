@@ -37,7 +37,7 @@ def main():
 		data_from = {'Плотность, кг/м3' : [exp1],}
 		experie = pd.DataFrame.from_dict(data_from)
 				
-		return  render_template('main.html', result = 7)
+		return  render_template('main.html', result = exp1)
 	
 if __name__ == '__main__':
 	app.run()
