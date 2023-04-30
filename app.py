@@ -14,9 +14,9 @@ from joblib import load
 
 app = flask.Flask(__name__, template_folder = 'templates')  
 
-loaded_scaler_x = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.joblib')
-loaded_scaler_y = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_y.joblib')
-loaded_model = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.joblib')
+loaded_scaler_x = load('model_scaler_x.joblib')
+loaded_scaler_y = load('model_scaler_y.joblib')
+loaded_model = load('model_predict2.joblib')
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
