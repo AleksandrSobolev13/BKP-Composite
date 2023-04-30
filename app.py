@@ -5,17 +5,18 @@ import pandas as pd
 import flask
 from tensorflow import keras
 from flask import Flask, request, render_template
-import pickle
-#from sklearn.preprocessing import MinMaxScaler
-#from sklearn.neural_network import MLPRegressor
+from joblib import load
+# import pickle
+# from sklearn.preprocessing import MinMaxScaler
+# from sklearn.neural_network import MLPRegressor
 
 
 
 app = flask.Flask(__name__, template_folder = 'templates')  
 
-loaded_scaler_x = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.joblib/model_scaler_x.pkl', 'rb'))
-loaded_scaler_y = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.joblib/model_scaler_y.pkl', 'rb'))
-loaded_model = pickle.load(open('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.joblib/model_predict2.pkl', 'rb'))
+loaded_scaler_x = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_x.joblib')
+loaded_scaler_y = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_scaler_y.joblib')
+loaded_model = load('https://github.com/AleksandrSobolev13/BKP-Composite/blob/main/model_predict2.joblib')
 
 @app.route('/', methods = ['POST', 'GET'])
 @app.route('/index', methods = ['POST', 'GET'])
