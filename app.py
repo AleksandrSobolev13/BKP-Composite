@@ -6,18 +6,12 @@ import flask
 from tensorflow import keras
 from flask import Flask, request, render_template
 from joblib import load
-from joblib import dump
-from joblib import load
 
 app = flask.Flask(__name__, template_folder = 'templates')  
 
-# loaded_scaler_x = load('model_scaler_x.joblib')
-# loaded_scaler_y = load('model_scaler_y.joblib')
-# loaded_model = load('model_predict2.joblib')
-
-loaded_scaler_x = load('model1_scaler_x_test.joblib')
-loaded_scaler_y = load('model1_scaler_y_test.joblib')
-loaded_model = load('model1_predict.joblib')
+loaded_scaler_x = load('model_scaler_x.joblib')
+loaded_scaler_y = load('model_scaler_y.joblib')
+loaded_model = load('model_predict2.joblib')
 
 
 @app.route('/', methods = ['POST', 'GET'])
