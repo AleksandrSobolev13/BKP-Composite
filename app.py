@@ -6,11 +6,8 @@ import flask
 from tensorflow import keras
 from flask import Flask, request, render_template
 from joblib import load
-# import pickle
-# from sklearn.preprocessing import MinMaxScaler
-# from sklearn.neural_network import MLPRegressor
-
-
+from joblib import dump
+from joblib import load
 
 app = flask.Flask(__name__, template_folder = 'templates')  
 
@@ -99,22 +96,12 @@ def main():
         print('\n')
         print('Из  web формы возвращены 12 значений в виде словаря:', params)
         print('\n')
-        # print('Словарь из web формы преобразован в pd.DataFrame:')
-        # print(experie.T)
-        # for i in experie:
-        #       experie = [float(i.replace(',', '.'))]
-        
+               
         x4 = loaded_scaler_x.transform(experie)
         x3 = pd.DataFrame(x4, index=experie.index, columns=experie.columns)
         
-        #print('\n')
-        # print('pd.DataFrame после обработки loaded_scaler_x:')
-        # print(x3.T)
-        # print('\n')
         y_pred = loaded_model.predict(x3) 
-        # print('\n')
-        # print('Предсказанное значение Y до inverse_transform = ', y_pred.T)
-        # print('\n')   
+           
         y_nature = loaded_scaler_y.inverse_transform(y_pred.reshape(-1,1))
         print('Значение Y после inverse_transform отправляем в web = ', y_nature.T)
         print('angle = ', exp10)
@@ -122,7 +109,7 @@ def main():
         if not alarm_form:
             return  render_template('main.html', result = y_nature, data = data_from)
         return  render_template('main.html', result = y_nature, data = data_from, alarm_to = alarm_form )
-#for 2D array  y_pred :[ [  ] ] 
+
 if __name__ == '__main__':
     app.run()
 
